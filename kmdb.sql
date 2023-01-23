@@ -102,6 +102,7 @@
 -- Drop existing tables, so you'll start fresh each time this script is run.
 -- TODO!
 
+DROP TABLE IF EXISTS movies;
 DROP TABLE IF EXISTS movie;
 DROP TABLE IF EXISTS cast; 
 
@@ -129,7 +130,14 @@ CREATE TABLE cast (
 -- Use hard-coded foreign key IDs when necessary
 -- TODO!
 
--- INSERT INTO movies ()
+INSERT INTO movie (title, year_released, mpaa_rating, studio)
+VALUES ('Batman Begins', '2005', 'PG-13', 'Warner Bros.');
+
+INSERT INTO movie (title, year_released, mpaa_rating, studio)
+VALUES ('Dark Knight', '2008', 'PG-13', 'Warner Bros.');
+
+INSERT INTO movie (title, year_released, mpaa_rating, studio)
+VALUES ('Dark Knight Rises', '2012', 'PG-13', 'Warner Bros.');
 
 -- Prints a header for the movies output
 --.print "Movies"
