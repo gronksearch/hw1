@@ -120,10 +120,9 @@ CREATE TABLE movie (
 CREATE TABLE cast ( 
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     first_name TEXT,
-    last_name, 
-    character,
-    movie,
-    movie_id
+    last_name TEXT, 
+    character TEXT,
+    movie_id INTEGER
 );
 
 -- Insert data into your database that reflects the sample data shown above
@@ -138,6 +137,24 @@ VALUES ('Dark Knight', '2008', 'PG-13', 'Warner Bros.');
 
 INSERT INTO movie (title, year_released, mpaa_rating, studio)
 VALUES ('Dark Knight Rises', '2012', 'PG-13', 'Warner Bros.');
+
+INSERT INTO cast (first_name, last_name, character, movie_id)
+VALUES ('Christian', 'Bale', 'Bruce Wayne', '1');
+
+INSERT INTO cast (first_name, last_name, character, movie_id)
+VALUES ('Christian', 'Bale', 'Bruce Wayne', '2');
+
+INSERT INTO cast (first_name, last_name, character, movie_id)
+VALUES ('Christian', 'Bale', 'Bruce Wayne', '3');
+
+INSERT INTO cast (first_name, last_name, character, movie_id)
+VALUES ('Michael', 'Cane', 'Alfred', '1');
+
+INSERT INTO cast (first_name, last_name, character, movie_id)
+VALUES ('Michael', 'Cane', 'Alfred', '2');
+
+INSERT INTO cast (first_name, last_name, character, movie_id)
+VALUES ('Michael', 'Cane', 'Alfred', '3');
 
 -- Prints a header for the movies output
 --.print "Movies"
