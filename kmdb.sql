@@ -185,10 +185,8 @@ SELECT * FROM movies;
 -- The SQL statement for the cast output
 -- TODO!
 
-SELECT *, 
-       movies.title
+SELECT cast.first_name, movies.title
 
   FROM cast
 
- INNER JOIN movies
-    ON movies.id = cast.movies_id;
+ INNER JOIN movies ON movies.id = cast.movies_id;
