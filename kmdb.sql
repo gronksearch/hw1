@@ -109,7 +109,7 @@ DROP TABLE IF EXISTS cast;
 -- Create new tables, according to your domain model
 -- TODO!
 
-CREATE TABLE movie ( 
+CREATE TABLE movies ( 
     id INTEGER PRIMARY KEY AUTOINCREMENT, 
     title TEXT,
     year_released TEXT,
@@ -122,54 +122,73 @@ CREATE TABLE cast (
     first_name TEXT,
     last_name TEXT, 
     character TEXT,
-    movie_id INTEGER
+    movies_id INTEGER
 );
 
 -- Insert data into your database that reflects the sample data shown above
 -- Use hard-coded foreign key IDs when necessary
 -- TODO!
 
-INSERT INTO movie (title, year_released, mpaa_rating, studio)
+INSERT INTO movies (title, year_released, mpaa_rating, studio)
 VALUES ('Batman Begins', '2005', 'PG-13', 'Warner Bros.');
 
-INSERT INTO movie (title, year_released, mpaa_rating, studio)
+INSERT INTO movies (title, year_released, mpaa_rating, studio)
 VALUES ('Dark Knight', '2008', 'PG-13', 'Warner Bros.');
 
-INSERT INTO movie (title, year_released, mpaa_rating, studio)
+INSERT INTO movies (title, year_released, mpaa_rating, studio)
 VALUES ('Dark Knight Rises', '2012', 'PG-13', 'Warner Bros.');
 
-INSERT INTO cast (first_name, last_name, character, movie_id)
+INSERT INTO cast (first_name, last_name, character, movies_id)
 VALUES ('Christian', 'Bale', 'Bruce Wayne', '1');
 
-INSERT INTO cast (first_name, last_name, character, movie_id)
+INSERT INTO cast (first_name, last_name, character, movies_id)
 VALUES ('Christian', 'Bale', 'Bruce Wayne', '2');
 
-INSERT INTO cast (first_name, last_name, character, movie_id)
+INSERT INTO cast (first_name, last_name, character, movies_id)
 VALUES ('Christian', 'Bale', 'Bruce Wayne', '3');
 
-INSERT INTO cast (first_name, last_name, character, movie_id)
+INSERT INTO cast (first_name, last_name, character, movies_id)
 VALUES ('Michael', 'Cane', 'Alfred', '1');
 
-INSERT INTO cast (first_name, last_name, character, movie_id)
+INSERT INTO cast (first_name, last_name, character, movies_id)
 VALUES ('Michael', 'Cane', 'Alfred', '2');
 
-INSERT INTO cast (first_name, last_name, character, movie_id)
+INSERT INTO cast (first_name, last_name, character, movies_id)
 VALUES ('Michael', 'Cane', 'Alfred', '3');
 
+INSERT INTO cast (first_name, last_name, character, movies_id)
+VALUES ('Liam', 'Neeson', 'Ras Al Ghul', '1');
+
+INSERT INTO cast (first_name, last_name, character, movies_id)
+VALUES ('Heath', 'Ledger', 'Joke', '2');
+
+INSERT INTO cast (first_name, last_name, character, movies_id)
+VALUES ('Tom', 'Hardy', 'Bane', '3');
+
 -- Prints a header for the movies output
---.print "Movies"
--- .print "======"
--- .print ""
+.print "Movies"
+.print "======"
+.print ""
 
 -- The SQL statement for the movies output
 -- TODO!
 
+SELECT * FROM movies;
+
 -- Prints a header for the cast output
--- .print ""
--- .print "Top Cast"
--- .print "========"
--- .print ""
+.print ""
+.print "Cast"
+.print "========"
+.print ""
 
 
 -- The SQL statement for the cast output
 -- TODO!
+
+SELECT *, 
+       movies.title
+
+  FROM cast
+
+ INNER JOIN movies
+    ON movies.id = cast.movies_id;
